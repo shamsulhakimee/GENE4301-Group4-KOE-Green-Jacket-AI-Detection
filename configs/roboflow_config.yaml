@@ -1,0 +1,52 @@
+# Roboflow Dataset Curation & Augmentation Specification
+# Project: KOE Green Jacket PPE Detection
+
+workspace: "koe-workshop-ppe"
+project_name: "koe-green-jacket"
+version: 1
+
+classes:
+  - name: "KOE_Green_Jacket"
+    description: "Official green university workshop jacket worn by engineering students"
+    min_box_area_pixels: 400
+
+dataset_targets:
+  raw_positive_images: 350
+  raw_negative_images: 200
+  augmented_target_images: 1650
+  train_split: 0.70
+  val_split: 0.20
+  test_split: 0.10
+
+negative_sample_categories:
+  - "Plain Green T-shirts and Polo shirts"
+  - "Green hoodies and sports jackets"
+  - "White lab coats"
+  - "Blue denim and dark work jackets"
+  - "Civilian attire with backpacks"
+
+preprocessing:
+  auto_orient: true
+  resize:
+    width: 640
+    height: 640
+    format: "fit_within"
+
+augmentations:
+  horizontal_flip: true
+  rotation:
+    min: -12
+    max: 12
+  brightness:
+    min: -20
+    max: 20
+  saturation:
+    min: -15
+    max: 15
+  exposure:
+    min: -15
+    max: 15
+  mosaic: true
+  cutout:
+    count: 3
+    percent: 5

@@ -1,0 +1,30 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints*/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Distribution & packaging
+build/
+dist/
+*.egg-info/
+
+# Operating system artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Large dataset caches (keep configs & scripts, raw big zip/tar ignored)
+*.zip
+*.tar.gz
+*.tar
